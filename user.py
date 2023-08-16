@@ -27,7 +27,7 @@ try:
     with open('users.json', 'r') as file:
         user_data = json.load(file)
 except FileNotFoundError:
-    print('File not found!')
+    print('users.json not found!')
     quit()      
 
 
@@ -54,7 +54,7 @@ def sign_up():
         with open('users.json', 'w') as file:
             json.dump(user_data, file, indent=2)
     except FileNotFoundError:
-        print('File not found!')
+        print('users.json not found!')
         quit()
     return "Account created successfully!"
 
