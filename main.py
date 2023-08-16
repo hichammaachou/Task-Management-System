@@ -1,5 +1,6 @@
 from user import User, AuthenticatedUser1,sign_in,sign_up, user_data
 from task import Task, add_task, edit_task, dump_list,usertasks,view_all,change_status,delete_task, view_complete,view_uncomplete
+from functions import menu
 import json
 print("""Welcome to the Task Management System!
 
@@ -26,21 +27,9 @@ while True:
         print("Invalid option! Pick again")
 
 usertasks()
-
+menu()
 while True:
-    print(f'''Welcome, {AuthenticatedUser1._authenticated_user}!
-
-1. Add Task
-2. Edit Task
-3. Mark Task as Complete/Uncomplete
-4. Delete Task
-5. View All Tasks
-6. View Completed Tasks
-7. View Uncompleted Tasks
-8. View Task Statistics
-9. Sign Out
-
-    ''')
+    
     
     menu_choice = input('Enter your choice: ')
     if menu_choice == "1":
@@ -58,7 +47,7 @@ while True:
     elif menu_choice == "7":
         view_uncomplete()
     elif menu_choice == "8":
-        pass
+        menu()
     elif menu_choice == "9":
         quit()
     else:
